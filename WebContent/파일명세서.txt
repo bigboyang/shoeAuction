@@ -1,0 +1,33 @@
+공지사항
+ - 정보 : NoticeInfo
+ - 컨트롤러 : NoticeCtrl - *.ntc
+ - 목록(brd_list.ntc) : notice_list.jsp, NoticeListAction, NoticeListSvc
+ - 보기(brd_view.ntc) : notice_view.jsp, NoticeViewAction, NoticeViewSvc
+ - 폼(brd_form.ntc) : notice_form.jsp, NoticeFormAction, NoticeFormSvc
+ - 처리(brd_proc.ntc) : NoticeProAction, NoticeProSvc
+ - DB : NoticeDao
+ - 사용자 요청 -> NoticeCtrl -> Notice~Action -> Notice~Svc -> Notice~Dao
+ 
+ 회원 - 회원가입, 정보수정, 회원탈퇴
+  - 정보 : MemberInfo
+  - 컨트롤러 : MemberCtrl - *.mem
+  - 가입(join_form.mem)
+  - 수정(mypage.mem) : mypage.jsp, MemberUpdateAct, MemberUpdateSvc
+  - 처리(proc.mem) : MemberProcAct, MemberProcSvc
+  - DB : MemberDao  
+  
+  상품(프론트) : 목록(검색조건), 상세보기(옵션선택, 수량, 후기, 관련상품)
+ - 정보 : ProductInfo, CataBigInfo, CataSmallInfo, BrandInfo
+ - 컨트롤러 : ProductCtrl - *.pdt
+ - 목록(pdt_list.pdt) : pdt_list.jsp, PdtListAct, PdtListSvc
+ - 보기(pdt_view.pdt) : pdt_view.jsp, PdtViewAct, PdtViewSvc
+ - DB : ProductDao
+  
+  가입 : 사용자가 입력한 데이터들을 받아서 DB에 insert
+  수정 : 사용자가 입력한 데이터들을 받아서 해당 회원의 DB에 update
+  탈퇴 : DB에서 해당 회원의 mi_isactive 컬럼의 값을 'n'으로 update
+  
+  어드민
+  index.jsp : 어드민의 각 메뉴에 링크연결
+  login_form.jsp : 어드민 모드의 로그인 폼
+  logout.jsp : 어드민 모드의 로그아웃
